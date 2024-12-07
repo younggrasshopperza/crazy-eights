@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crazy Eights</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>Crazy Eights</h1>
+    <div class="status-bar">
+        <span id="status"></span>
+    </div>
+    <div class="game-options">
+        <label for="player-count">Number of players (2-4): </label>
+        <select id="player-count">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <label for="game-mode">Game Mode: </label>
+        <select id="game-mode">
+            <option value="normal">Normal</option>
+            <option value="knockout">Knockout</option>
+        </select>
+        <button id="start-game">Start Game</button>
+    </div>
+    <div class="board" style="display:none;">
+        <div class="players-container" id="players-container">
+            <!-- Player areas will be appended here dynamically -->
+        </div>
+        <div class="center-area">
+            <div class="discard-area">
+                <div id="discard" class="card-stack"></div>
+            </div>
+            <div class="deck-area">
+                <div id="deck" class="card-stack"></div>
+            </div>
+        </div>
+    </div>
+    <div class="actions" style="display:none;">
+        <button id="draw-button">Draw</button>
+    </div>
+</div>
+
+<!-- Modal for results and next round -->
+<div class="modal" id="results-modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="results-title"></h2>
+        <div id="results-body"></div>
+        <div class="modal-actions">
+            <button id="next-round-btn" style="display:none;">Next Round</button>
+            <button id="close-modal-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Thinking Indicator -->
+<div id="thinking-indicator">
+    <span id="thinking-text"></span>
+    <span class="spinner">💭</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
